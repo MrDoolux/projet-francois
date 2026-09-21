@@ -5,74 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Je veux survivre — commande du livre</title>
   <style>
-    :root {
-      --ink: #1b3a4b;
-      --muted: #5b6b73;
-      --line: #d7dee3;
-      --bg: #f6f3ee;
-      --card: #fff;
-    }
+    :root { --ink:#1b3a4b; --muted:#5b6b73; --line:#d7dee3; --bg:#f6f3ee; --card:#fff; }
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.55;
-    }
-    .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 64px; }
-    header h1 { font-size: 1.55rem; margin: 0 0 6px; letter-spacing: .02em; }
-    header p { margin: 0 0 22px; color: var(--muted); font-size: .95rem; }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 20px 20px 18px;
-      margin-bottom: 16px;
-    }
-    .price { font-size: 1.7rem; font-weight: 700; }
-    .note { font-size: .9rem; color: var(--muted); }
-    ol { padding-left: 1.2rem; }
-    li { margin-bottom: .45rem; }
-    a { color: var(--ink); }
-    .btn {
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      background: var(--ink);
-      color: #fff;
-      padding: 14px 16px;
-      border-radius: 10px;
-      font-family: system-ui, sans-serif;
-      font-weight: 650;
-      letter-spacing: .03em;
-      margin: 12px 0 8px;
-    }
-    .btn.secondary {
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid var(--ink);
-    }
-    .small { font-size: .82rem; color: var(--muted); }
-    details { margin-top: 8px; }
-    summary { cursor: pointer; font-family: system-ui, sans-serif; font-weight: 600; }
-    footer { margin-top: 28px; font-size: .8rem; color: var(--muted); }
-    .video {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 10px;
-      background: #000;
-    }
-    .video iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
+    body { margin:0; font-family: Georgia, "Times New Roman", serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    .wrap { max-width:640px; margin:0 auto; padding:28px 18px 64px; }
+    header h1 { font-size:1.55rem; margin:0 0 6px; }
+    header p { margin:0 0 22px; color:var(--muted); font-size:.95rem; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; margin-bottom:16px; }
+    .price { font-size:1.7rem; font-weight:700; }
+    .note { font-size:.9rem; color:var(--muted); }
+    ol { padding-left:1.2rem; }
+    li { margin-bottom:.45rem; }
+    a { color:var(--ink); }
+    .btn { display:block; text-align:center; text-decoration:none; background:var(--ink); color:#fff; padding:14px 16px; border-radius:10px; font-family:system-ui,sans-serif; font-weight:650; margin:12px 0 8px; }
+    .btn.secondary { background:transparent; color:var(--ink); border:1px solid var(--ink); }
+    .small { font-size:.82rem; color:var(--muted); }
+    footer { margin-top:28px; font-size:.8rem; color:var(--muted); }
+    .video { position:relative; width:100%; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:10px; background:#000; }
+    .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
   </style>
 </head>
 <body>
@@ -81,54 +31,36 @@
       <h1>Je veux survivre</h1>
       <p>Jerzy CHOMICKI · présenté par François CHOMICKI · livre broché</p>
     </header>
-
     <section class="card">
       <div class="video">
-        <iframe
-          src="https://www.youtube.com/embed/7KFC-vmC1Sk"
-          title="Je veux survivre — François CHOMICKI"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <iframe src="https://www.youtube.com/embed/7KFC-vmC1Sk" title="Je veux survivre" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
-      <p class="small" style="margin-top:10px;">
-        Vidéo : <a href="https://youtu.be/7KFC-vmC1Sk">youtu.be/7KFC-vmC1Sk</a>
-      </p>
+      <p class="small" style="margin-top:10px;">Vidéo : <a href="https://youtu.be/7KFC-vmC1Sk">youtu.be/7KFC-vmC1Sk</a></p>
     </section>
-
     <section class="card">
       <div class="price">23,00 €</div>
       <p class="note">TTC · port France métropolitaine inclus · prix affiché dans la vidéo</p>
       <p>Après paiement, envoyez votre <strong>adresse postale complète</strong> (et une dédicace si vous en voulez une). Expédition sous 7 jours ouvrés, avec numéro de suivi.</p>
       <a class="btn" href="https://paypal.me/IDENTIFIANT/23">Payer avec PayPal</a>
-      <p class="small">Paiement « biens et services ». Remplacer IDENTIFIANT par le PayPal.Me de François avant vente réelle.</p>
+      <p class="small">Paiement « biens et services ». Remplacer IDENTIFIANT avant vente réelle.</p>
     </section>
-
     <section class="card">
       <h2 style="margin-top:0;font-size:1.15rem;">Comment ça se passe</h2>
       <ol>
-        <li>Vous lisez les conditions (lien Drive ci-dessous).</li>
-        <li>Vous payez via PayPal. Le montant est fixé à 23 €.</li>
-        <li>Vous envoyez votre adresse (nom, rue, CP, ville, téléphone).</li>
-        <li>Le livre part sous 7 jours ouvrés. Vous recevez le suivi.</li>
-        <li>Rétractation : 14 jours après réception, selon les CGV.</li>
+        <li>Vous lisez les conditions.</li>
+        <li>Vous payez via PayPal. Montant fixé à 23 €.</li>
+        <li>Vous envoyez votre adresse.</li>
+        <li>Le livre part sous 7 jours ouvrés.</li>
+        <li>Rétractation : 14 jours après réception.</li>
       </ol>
     </section>
-
     <section class="card">
       <h2 style="margin-top:0;font-size:1.15rem;">Documents</h2>
-      <a class="btn secondary" href="https://drive.google.com/drive/folders/1EootMPot7CGSwm70Sm9bFY1yzQ3kSDPb" target="_blank" rel="noopener">Conditions de vente (Drive)</a>
-      <p class="small">Dossier « Conditions générales » sur le Drive Horus AIS. À partager « toute personne disposant du lien » — Lecteur. Le PDF fera foi dès qu’il sera déposé dedans.</p>
-      <details id="cgv">
-        <summary>Résumé des conditions</summary>
-        <p>Vendeur : [NOM / SIRET / e-mail de François ou IFRA]. Prix : 23 € TTC port métropole inclus. Délai d’expédition : 7 jours ouvrés après paiement + adresse. Droit de rétractation : 14 jours à réception. Retour à la charge de l’acheteur, livre en état. Données utilisées uniquement pour livrer et comptabiliser. Médiateur : [à renseigner].</p>
-      </details>
+      <a class="btn secondary" href="./cgv.html">Lire les conditions de vente</a>
+      <a class="btn secondary" href="https://drive.google.com/drive/folders/1EootMPot7CGSwm70Sm9bFY1yzQ3kSDPb?usp=drive_link" target="_blank" rel="noopener">Ouvrir le dossier Drive (test)</a>
+      <p class="small">Le bouton principal ouvre les CGV sur cette même page. Le Drive est là pour le PDF.</p>
     </section>
-
-    <footer>
-      Page unique pour le QR. Un QR = cette page.<br />
-      Vente par l’auteur / IFRA. Page technique hébergée séparément de Horus AIS.
-    </footer>
+    <footer>Page unique pour le QR. Vente par l’auteur / IFRA. Hébergement séparé de Horus AIS.</footer>
   </div>
 </body>
 </html>
