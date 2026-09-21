@@ -25,6 +25,12 @@
     .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
     .qr { text-align:center; }
     .qr img { width:220px; height:220px; background:#fff; border:1px solid var(--line); border-radius:8px; padding:8px; }
+    .dedicace { margin:14px 0 4px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:#fbfaf7; font-family:system-ui,sans-serif; }
+    .dedicace label.check { display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:.95rem; }
+    .dedicace input[type="checkbox"] { margin-top:3px; width:18px; height:18px; flex:0 0 auto; }
+    .dedicace .field { display:none; margin-top:10px; }
+    .dedicace .field.on { display:block; }
+    .dedicace input[type="text"] { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:system-ui,sans-serif; }
   </style>
 </head>
 <body>
@@ -42,7 +48,18 @@
     <section class="card">
       <div class="price">23,00 €</div>
       <p class="note">TTC · port France métropolitaine inclus · prix affiché dans la vidéo</p>
-      <p>Après paiement, envoyez votre <strong>adresse postale complète</strong> (et une dédicace si vous en voulez une). Expédition sous 7 jours ouvrés, avec numéro de suivi.</p>
+      <div class="dedicace">
+        <label class="check" for="want-dedicace">
+          <input type="checkbox" id="want-dedicace" />
+          <span>Je souhaite une dédicace <strong>incluse dans les 23 €</strong></span>
+        </label>
+        <div class="field" id="dedicace-field">
+          <label class="small" for="dedicace-name">Au prénom de…</label>
+          <input type="text" id="dedicace-name" name="dedicace" maxlength="80" placeholder="Prénom" autocomplete="given-name" />
+          <p class="small" style="margin:8px 0 0;">Après le paiement, envoyez ce prénom avec votre adresse postale. Pas de supplément.</p>
+        </div>
+      </div>
+      <p>Après paiement, envoyez votre <strong>adresse postale complète</strong>. Expédition sous 7 jours ouvrés, avec numéro de suivi.</p>
       <a class="btn" href="./explication-paypal.html">Payer avec PayPal</a>
       <p class="small">Paiement « biens et services ». Le bouton ouvre la page d’intégration tant que le lien produit 23 € n’est pas fourni.</p>
     </section>
@@ -51,7 +68,7 @@
       <ol>
         <li>Vous lisez les conditions.</li>
         <li>Vous payez via PayPal. Montant fixé à 23 €.</li>
-        <li>Vous envoyez votre adresse.</li>
+        <li>Vous envoyez votre adresse, et le prénom de dédicace si vous avez coché la case.</li>
         <li>Le livre part sous 7 jours ouvrés.</li>
         <li>Rétractation : 14 jours après réception.</li>
       </ol>
@@ -70,5 +87,19 @@
     </section>
     <footer>Page unique pour le QR. Vente par l’auteur / IFRA. Hébergement séparé de Horus AIS.</footer>
   </div>
+  <script>
+    (function () {
+      var box = document.getElementById('want-dedicace');
+      var field = document.getElementById('dedicace-field');
+      var input = document.getElementById('dedicace-name');
+      if (!box || !field) return;
+      function sync() {
+        field.classList.toggle('on', box.checked);
+        if (box.checked && input) input.focus();
+      }
+      box.addEventListener('change', sync);
+      sync();
+    })();
+  </script>
 </body>
 </html>
