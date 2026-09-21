@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Livre broché — commande</title>
+  <style>
+    :root {
+      --ink: #1b3a4b;
+      --muted: #5b6b73;
+      --line: #d7dee3;
+      --bg: #f6f3ee;
+      --card: #fff;
+      --accent: #c45c26;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 64px; }
+    header h1 { font-size: 1.55rem; margin: 0 0 6px; letter-spacing: .02em; }
+    header p { margin: 0 0 22px; color: var(--muted); font-size: .95rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 20px 18px;
+      margin-bottom: 16px;
+    }
+    .price { font-size: 1.7rem; font-weight: 700; }
+    .note { font-size: .9rem; color: var(--muted); }
+    ol { padding-left: 1.2rem; }
+    li { margin-bottom: .45rem; }
+    a { color: var(--ink); }
+    .btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: var(--ink);
+      color: #fff;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-family: system-ui, sans-serif;
+      font-weight: 650;
+      letter-spacing: .03em;
+      margin: 12px 0 8px;
+    }
+    .btn.secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+    }
+    .small { font-size: .82rem; color: var(--muted); }
+    details { margin-top: 8px; }
+    summary { cursor: pointer; font-family: system-ui, sans-serif; font-weight: 600; }
+    footer { margin-top: 28px; font-size: .8rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>[TITRE DU LIVRE]</h1>
+      <p>Livre broché · commande en ligne · un seul lien, un seul QR</p>
+    </header>
+
+    <section class="card">
+      <div class="price">[18,00 €]</div>
+      <p class="note">TTC · port France métropolitaine inclus · [XXX] pages</p>
+      <p>Après paiement, vous recevez un e-mail. Répondez avec votre <strong>adresse postale complète</strong>. Expédition sous 7 jours ouvrés, avec numéro de suivi.</p>
+      <a class="btn" href="https://paypal.me/IDENTIFIANT/18">Payer avec PayPal</a>
+      <p class="small">Paiement « biens et services ». Ne pas utiliser « amis et famille ».</p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:1.15rem;">Comment ça se passe</h2>
+      <ol>
+        <li>Vous lisez les conditions ci-dessous (ou le PDF).</li>
+        <li>Vous payez via le bouton PayPal. Le montant est fixé.</li>
+        <li>Vous envoyez votre adresse (nom, rue, CP, ville, téléphone).</li>
+        <li>Le livre part sous 7 jours ouvrés. Vous recevez le suivi.</li>
+        <li>Rétractation : 14 jours après réception, selon les CGV.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:1.15rem;">Documents</h2>
+      <a class="btn secondary" href="https://drive.google.com/file/d/ID_DU_PDF/view">Ouvrir les conditions de vente (PDF)</a>
+      <p class="small">Même texte que le résumé ci-dessous. Le PDF fait foi si les deux diffèrent.</p>
+      <details>
+        <summary>Résumé des conditions</summary>
+        <p>Vendeur : [NOM / SIRET / e-mail]. Prix : [18 €] TTC port métropole inclus. Délai d’expédition : 7 jours ouvrés après paiement + adresse. Droit de rétractation : 14 jours à réception. Retour à la charge de l’acheteur, livre en état. Données utilisées uniquement pour livrer et comptabiliser. Médiateur : [à renseigner].</p>
+      </details>
+    </section>
+
+    <footer>
+      Page unique pour le QR code. Un QR = une URL = cette page.<br />
+      Remplacez les [CROCHETS] et les deux liens (PayPal + Drive) avant mise en vente réelle.<br />
+      Vente effectuée par l’auteur. Page technique hébergée séparément de Horus AIS.
+    </footer>
+  </div>
+</body>
+</html>
