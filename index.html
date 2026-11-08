@@ -5,9 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Je veux survivre — commande du livre</title>
   <style>
-    :root { --ink:#1b3a4b; --muted:#5b6b73; --line:#d7dee3; --bg:#f6f3ee; --card:#fff; }
+    :root { 
+      --ink:#f5f0e6; 
+      --muted:#c8bfb0; 
+      --line:#3a342c; 
+      --bg:#1a1612; 
+      --card:rgba(26,22,18,0.82); 
+    }
     * { box-sizing: border-box; }
-    body { margin:0; font-family: Georgia, "Times New Roman", serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+    body { 
+      margin:0; 
+      font-family: Georgia, "Times New Roman", serif; 
+      background: #1a1612 url('./assets/fond-ww2.jpg') center/cover no-repeat fixed; 
+      color:var(--ink); 
+      line-height:1.55; 
+    }
     .wrap { max-width:640px; margin:0 auto; padding:28px 18px 64px; }
     header h1 { font-size:1.55rem; margin:0 0 6px; }
     header p { margin:0 0 22px; color:var(--muted); font-size:.95rem; }
@@ -17,7 +29,7 @@
     ol { padding-left:1.2rem; }
     li { margin-bottom:.45rem; }
     a { color:var(--ink); }
-    .btn { display:block; text-align:center; text-decoration:none; background:var(--ink); color:#fff; padding:14px 16px; border-radius:10px; font-family:system-ui,sans-serif; font-weight:650; margin:12px 0 8px; }
+    .btn { display:block; text-align:center; text-decoration:none; background:var(--ink); color:#1a1612; padding:14px 16px; border-radius:10px; font-family:system-ui,sans-serif; font-weight:650; margin:12px 0 8px; }
     .btn.secondary { background:transparent; color:var(--ink); border:1px solid var(--ink); }
     .small { font-size:.82rem; color:var(--muted); }
     footer { margin-top:28px; font-size:.8rem; color:var(--muted); }
@@ -28,12 +40,12 @@
     .video .play::after { content:""; position:absolute; left:26px; top:14px; border-style:solid; border-width:10px 0 10px 16px; border-color:transparent transparent transparent #fff; }
     .qr { text-align:center; }
     .qr img { width:220px; height:220px; background:#fff; border:1px solid var(--line); border-radius:8px; padding:8px; }
-    .dedicace { margin:14px 0 4px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:#fbfaf7; font-family:system-ui,sans-serif; }
+    .dedicace { margin:14px 0 4px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:rgba(26,22,18,0.6); font-family:system-ui,sans-serif; }
     .dedicace label.check { display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:.95rem; }
     .dedicace input[type="checkbox"] { margin-top:3px; width:18px; height:18px; flex:0 0 auto; }
     .dedicace .field { display:none; margin-top:10px; }
     .dedicace .field.on { display:block; }
-    .dedicace input[type="text"] { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:system-ui,sans-serif; }
+    .dedicace input[type="text"] { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:system-ui,sans-serif; background:#2a2520; color:var(--ink); }
   </style>
 </head>
 <body>
