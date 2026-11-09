@@ -71,10 +71,15 @@
       <p class="note">TTC · port France métropolitaine inclus · prix affiché dans la vidéo</p>
       <form class="order-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="REMPLACER_PAR_VOTRE_CLE_WEB3FORMS">
-        <input type="hidden" name="subject" value="Commande Je veux survivre — 23 €">
-        <input type="hidden" name="from_name" value="Page commande projet-francois">
+        <input type="hidden" name="subject" 
+          value="Commande Je veux survivre — 23 €">
+        <input type="hidden" name="from_name" 
+          value="Page commande projet-francois">
+        <input type="hidden" name="redirect" 
+          value="https://mrdoolux.github.io/projet-francois/merci.html">
         <label class="check" for="want-dedicace">
-          <input type="checkbox" id="want-dedicace" name="dedicace" value="oui" />
+          <input type="checkbox" id="want-dedicace" name="dedicace" 
+            value="oui" />
           <span>Je souhaite une dédicace <strong>incluse dans les 23 €</strong></span>
         </label>
         <div class="field" id="dedicace-field">
@@ -86,7 +91,7 @@
         <label for="email">E-mail (pour le numéro de suivi)</label>
         <input type="email" id="email" name="email" placeholder="optionnel">
         <button class="btn" type="submit">Payer avec PayPal</button>
-        <p class="small">Après validation du formulaire, cliquez sur le bouton PayPal qui s'ouvre. Paiement sécurisé via PayPal (« biens et services »). Montant fixé à 23 €. Expédition sous 7 jours ouvrés, avec numéro de suivi. Rétractation : 14 jours après réception.</p>
+        <p class="small">Après envoi, vous serez redirigé vers la page de paiement PayPal.<br>Paiement sécurisé via PayPal (« biens et services »). Montant fixé à 23 €. Expédition sous 7 jours ouvrés, avec numéro de suivi. Rétractation : 14 jours après réception.</p>
       </form>
     </section>
     <section class="card">
