@@ -30,7 +30,7 @@
     ol { padding-left:1.2rem; }
     li { margin-bottom:.45rem; }
     a { color:var(--ink); }
-    .btn { display:block; text-align:center; text-decoration:none; background:var(--ink); color:#1a1612; padding:14px 16px; border-radius:10px; font-family:system-ui,sans-serif; font-weight:650; margin:12px 0 8px; }
+    .btn { display:block; text-align:center; text-decoration:none; background:var(--ink); color:#1a1612; padding:14px 16px; border-radius:10px; font-family:system-ui,sans-serif; font-weight:650; margin:12px 0 8px; border:none; cursor:pointer; width:100%; font-size:1rem; }
     .btn.secondary { background:transparent; color:var(--ink); border:1px solid var(--ink); }
     .small { font-size:.82rem; color:var(--muted); }
     footer { margin-top:28px; font-size:.8rem; color:var(--muted); }
@@ -41,12 +41,14 @@
     .video .play::after { content:""; position:absolute; left:26px; top:14px; border-style:solid; border-width:10px 0 10px 16px; border-color:transparent transparent transparent #fff; }
     .qr { text-align:center; }
     .qr img { width:220px; height:220px; background:#fff; border:1px solid var(--line); border-radius:8px; padding:8px; }
-    .dedicace { margin:14px 0 4px; padding:12px 14px; border:1px solid var(--line); border-radius:10px; background:rgba(26,22,18,0.6); font-family:system-ui,sans-serif; }
-    .dedicace label.check { display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:.95rem; }
-    .dedicace input[type="checkbox"] { margin-top:3px; width:18px; height:18px; flex:0 0 auto; }
-    .dedicace .field { display:none; margin-top:10px; }
-    .dedicace .field.on { display:block; }
-    .dedicace input[type="text"] { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:system-ui,sans-serif; background:#2a2520; color:var(--ink); }
+    .order-form label { display:block; font-family:system-ui,sans-serif; font-size:.9rem; color:var(--muted); margin:12px 0 4px; }
+    .order-form input[type="text"], .order-form input[type="email"], .order-form textarea { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; font-size:1rem; font-family:system-ui,sans-serif; background:#2a2520; color:var(--ink); }
+    .order-form textarea { min-height:70px; resize:vertical; }
+    .order-form .check { display:flex; align-items:flex-start; gap:10px; cursor:pointer; font-size:.95rem; font-family:system-ui,sans-serif; margin:14px 0 4px; }
+    .order-form input[type="checkbox"] { margin-top:3px; width:18px; height:18px; flex:0 0 auto; }
+    .order-form .field { display:none; margin-top:10px; }
+    .order-form .field.on { display:block; }
+    .order-form .btn:disabled { opacity:.5; cursor:not-allowed; }
   </style>
 </head>
 <body>
@@ -67,27 +69,32 @@
     <section class="card">
       <div class="price">23,00 €</div>
       <p class="note">TTC · port France métropolitaine inclus · prix affiché dans la vidéo</p>
-      <div class="dedicace">
+      <form class="order-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="REMPLACER_PAR_VOTRE_CLE_WEB3FORMS">
+        <input type="hidden" name="subject" value="Commande Je veux survivre — 23 €">
+        <input type="hidden" name="from_name" value="Page commande projet-francois">
         <label class="check" for="want-dedicace">
-          <input type="checkbox" id="want-dedicace" />
+          <input type="checkbox" id="want-dedicace" name="dedicace" value="oui" />
           <span>Je souhaite une dédicace <strong>incluse dans les 23 €</strong></span>
         </label>
         <div class="field" id="dedicace-field">
-          <label class="small" for="dedicace-name">Au prénom de…</label>
-          <input type="text" id="dedicace-name" name="dedicace" maxlength="80" placeholder="Prénom" autocomplete="given-name" />
-          <p class="small" style="margin:8px 0 0;">Après le paiement, envoyez ce prénom avec votre adresse postale. Pas de supplément.</p>
+          <label for="dedicace-name">Au prénom de…</label>
+          <input type="text" id="dedicace-name" name="prenom_dedicace" maxlength="80" placeholder="Prénom" autocomplete="given-name" />
         </div>
-      </div>
-      <p>Après paiement, envoyez votre <strong>adresse postale complète</strong>. Expédition sous 7 jours ouvrés, avec numéro de suivi.</p>
-      <a class="btn" href="https://www.paypal.me/FChomicki" target="_blank" rel="noopener">Payer avec PayPal</a>
-      <p class="small">Paiement sécurisé via PayPal (« biens et services »). Montant fixé à 23 €.</p>
+        <label for="adresse">Adresse postale complète <span style="color:#d4a017">*</span></label>
+        <textarea id="adresse" name="adresse" required placeholder="Numéro, rue, code postal, ville"></textarea>
+        <label for="email">E-mail (pour le numéro de suivi)</label>
+        <input type="email" id="email" name="email" placeholder="optionnel">
+        <button class="btn" type="submit">Payer avec PayPal</button>
+        <p class="small">Après validation du formulaire, cliquez sur le bouton PayPal qui s'ouvre. Paiement sécurisé via PayPal (« biens et services »). Montant fixé à 23 €. Expédition sous 7 jours ouvrés, avec numéro de suivi. Rétractation : 14 jours après réception.</p>
+      </form>
     </section>
     <section class="card">
       <h2 style="margin-top:0;font-size:1.15rem;">Comment ça se passe</h2>
       <ol>
-        <li>Vous lisez les conditions.</li>
+        <li>Vous remplissez le formulaire (adresse + dédicace si souhaitée).</li>
         <li>Vous payez via PayPal. Montant fixé à 23 €.</li>
-        <li>Vous envoyez votre adresse, et le prénom de dédicace si vous avez coché la case.</li>
+        <li>François reçoit votre commande automatiquement par e-mail.</li>
         <li>Le livre part sous 7 jours ouvrés.</li>
         <li>Rétractation : 14 jours après réception.</li>
       </ol>
@@ -104,13 +111,13 @@
       <p class="small">Scannez avec le téléphone : ça doit ouvrir cette page.<br />
       Cible : <a href="https://mrdoolux.github.io/projet-francois/">mrdoolux.github.io/projet-francois/</a></p>
     </section>
-    <footer>Page unique pour le QR. Vente par l’auteur / IFRA. Hébergement séparé de Horus AIS.</footer>
+    <footer>Page unique pour le QR. Vente par l'auteur / IFRA. Hébergement séparé de Horus AIS.</footer>
   </div>
   <script>
     (function () {
-      var box = document.getElementById('want-dedicace');
-      var field = document.getElementById('dedicace-field');
-      var input = document.getElementById('dedicace-name');
+      var box = document.getElementById('want-dedicace);
+      var field = document.getElementById('dedicace-field);
+      var input = document.getElementById('dedicace-name);
       if (!box || !field) return;
       function sync() {
         field.classList.toggle('on', box.checked);
