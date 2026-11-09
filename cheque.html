@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paiement par chèque — Je veux survivre</title>
+  <style>
+    :root { 
+      --ink:#f5f0e6; 
+      --muted:#c8bfb0; 
+      --line:#3a342c; 
+      --bg:#1a1612; 
+      --card:rgba(26,22,18,0.82); 
+    }
+    * { box-sizing: border-box; }
+    body { 
+      margin:0; 
+      font-family: Georgia, "Times New Roman", serif; 
+      background: #1a1612 url('./assets/fond-ww2.jpg') center/cover no-repeat fixed; 
+      color:var(--ink); 
+      line-height:1.55; 
+    }
+    .wrap { max-width:640px; margin:0 auto; padding:48px 18px 64px; text-align:center; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:32px 24px; }
+    h1 { font-size:1.6rem; margin:0 0 16px; color:#d4a017; }
+    .adresse { font-size:1.15rem; line-height:1.7; margin:20px 0; }
+    .btn { display:inline-block; text-decoration:none; background:var(--ink); color:#1a1612; padding:12px 24px; border-radius:10px; font-family:system-ui,sans-serif; font-weight:650; margin:12px 8px; }
+    .small { font-size:.85rem; color:var(--muted); margin-top:20px; }
+    a.back { color:var(--ink); font-size:.9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Paiement par chèque</h1>
+      <p>Envoyez un chèque de <strong>23 €</strong> à l'ordre de <strong>François CHOMICKI</strong> à l'adresse suivante :</p>
+      <div class="adresse">
+        IFRA<br>
+        24 rue Sainte-Geneviève<br>
+        77940 Villoiseau<br>
+        France
+      </div>
+      <p>Indiquez clairement votre adresse postale complète et si vous souhaitez une dédicace.</p>
+      <p class="small">Le livre sera expédié dès réception du chèque (sous 7 jours ouvrés).</p>
+      <p><a class="back" href="./index.html">← Retour à la commande</a></p>
+    </div>
+  </div>
+</body>
+</html>
